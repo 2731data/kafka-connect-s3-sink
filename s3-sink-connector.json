@@ -1,0 +1,20 @@
+{
+  "name": "s3-sink-connector",
+  "config": {
+    "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+    "tasks.max": "1",
+    "topics": "biogroupit_gpss_schema_history",
+    "s3.bucket.name": "kafka-sink",
+    "s3.part.size": "5242880",
+    "s3.region": "",
+    "s3.endpoint": "http://localhost:9000",
+    "s3.credentials.provider.class": "org.apache.kafka.connect.storage.S3BasicCredentialsProvider",
+    "s3.access.key.id": "minioadmin",
+    "s3.secret.access.key": "minioadmin",
+    "format.class": "io.confluent.connect.s3.format.json.JsonFormat",
+    "flush.size": "3",
+    "storage.class": "io.confluent.connect.s3.storage.S3Storage",
+    "schema.compatibility": "NONE",
+    "partitioner.class": "io.confluent.connect.storage.partitioner.DefaultPartitioner"
+  }
+}
